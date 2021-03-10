@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    android:elevation="10dp"
+    android:background="@drawable/characters_layout_bg">
+
+    <ImageView
+        android:id="@+id/character_image"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:elevation="-1dp"
+        android:background="@drawable/characters_image_bg"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp">
+
+        <TextView
+            android:id="@+id/character_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:text="EyeHole Man"
+            android:lines="1"
+            android:textColor="@color/character_name"/>
+
+        <TextView
+            android:id="@+id/character_origin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:textSize="14dp"
+            android:text="Earth"
+            android:lines="1"
+            android:textColor="@color/black"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:text="Episode:"
+            android:lines="1"
+            android:textColor="@color/black"/>
+        <TextView
+            android:id="@+id/character_episode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14dp"
+            android:text="Monsters"
+            android:lines="1"
+            android:textColor="@color/black"/>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
