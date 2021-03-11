@@ -2,6 +2,7 @@ package com.rickandmorty.rickandmorty;
 
 import android.content.Context;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -15,6 +16,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -62,7 +64,22 @@ public class CharacterAdapter extends RecyclerView.Adapter<CharacterAdapter.View
                 .into(holder.character_image);
 
         holder.character_name.setText(character.getName());
-//        holder.character_origin.setText(character.getCreated());
+        holder.character_origin.setText(character.getLocation());
+        holder.character_episode.setText(character.getEpisode());
+        holder.curen_character.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, Detail.class);
+                intent.putExtra("character", character);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intent);
+
+                if (context instanceof Detail){
+                    ((Detail) context).finish();
+                }
+
+            }
+        });
     }
 
 
@@ -71,9 +88,10 @@ public class CharacterAdapter extends RecyclerView.Adapter<CharacterAdapter.View
             return this.characterList.size();
             }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         private ImageView character_image;
         private TextView character_name,character_origin,character_episode;
+        private LinearLayout curen_character;
 
 
         public ViewHolder(View view) {
@@ -82,11 +100,8 @@ public class CharacterAdapter extends RecyclerView.Adapter<CharacterAdapter.View
             this.character_name = view.findViewById(R.id.character_name);
             this.character_origin = view.findViewById(R.id.character_origin);
             this.character_episode = view.findViewById(R.id.character_episode);
+            this.curen_character = view.findViewById(R.id.curen_character);
         }
 
-        @Override
-        public void onClick(View view) {
-            Toast.makeText(view.getContext(), "position : " + getLayoutPosition(), Toast.LENGTH_SHORT).show();
-        }
 }
 }

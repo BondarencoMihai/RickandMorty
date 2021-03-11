@@ -1,6 +1,8 @@
 package com.rickandmorty.rickandmorty;
 
-public class Character {
+import java.io.Serializable;
+
+public class Character implements Serializable {
     private String id;
     private String name;
     private String status;
@@ -10,7 +12,9 @@ public class Character {
     private String image;
     private String url;
     private String created;
-    private String origin;
+    private String location;
+    private String location_url;
+    private String episode_id;
     private String episode;
 
 
@@ -86,12 +90,36 @@ public class Character {
         this.created = created;
     }
 
-    public String getOrigin() {
-        return origin;
+
+    public String getLocation() {
+        return location;
     }
 
-    public void setOrigin(String origin) {
-        this.origin = origin;
+    public void setLocation(String location) {
+        this.location = location;
     }
 
+    public String getLocation_url() {
+        return location_url;
+    }
+
+    public void setLocation_url(String location_url) {
+        this.location_url = location_url;
+    }
+
+    public String getEpisode_id() {
+        return episode_id;
+    }
+
+    public void setEpisode_id(String episode_id) {
+        this.episode_id = episode_id;
+    }
+
+    public String getEpisode() {
+        return episode;
+    }
+
+    public void setEpisode(String episode) {
+        this.episode = episode;
+    }
 }
